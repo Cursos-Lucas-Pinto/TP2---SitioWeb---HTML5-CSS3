@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Trabajo practico final del modulo 2 del curso Desarrollo Web Front End ofrecido por Fundación Telefonica">
+        <meta name="keywords" content="Tp, modulo2, telefonica, frontend">
+
+        <link rel="stylesheet" href="css/estilos.css">
+
+        <title>
+            TP Final Módulo 2
+        </title>
+
+    </head>
+    
+    <body>
+        <header class="grilla-header">
+            <nav class="grilla-menu">
+                <a class="item" href="index.html">
+                    Inicio
+                </a>
+
+                <a class="item" href="tabla.html">
+                    Tabla
+                </a>
+
+
+                <a class="item" href="cv.html">
+                    CV Resumido
+                </a>
+            
+                <a class="login activo" href="login.html">
+                    Login
+                </a>
+            </nav>
+        </header>
+
+        <section class="grilla-section">
+            <div class="grilla-fondo ">
+                <img class="fondo-sup blur" src="img/fondo-index/fondo-sup-3000x2250-min-min.png" alt="planeta y estrellas" />
+                
+                <img class="fondo-inf blur" src="img/fondo-index/fondo-inf-3000x2250-min-min.png" alt="astronauta en roca espacial" />
+            </div>
+
+            <div class="grilla-tarjeta-form">
+                <form class="grilla-form" action="/login.html" method="GET">    
+                    <p class="titulo-form">
+                        Bienvenido de vuelta
+                    </p>
+    
+                    <p>
+                        <label class="etiqueta-usuario">
+                            Usuario:
+                        </label>
+                    </p>
+    
+                    <p>
+                        <input class="campo-usuario" type="text" name="usuario" placeholder="Usuario" required/>
+                    </p>
+    
+                    <p>
+                        <label class="etiqueta-password">
+                            Contraseña:
+                        </label>
+                    </p>
+    
+                    <p>
+                        <input class="campo-password" type="password" name="contraseña" placeholder="Contraseña" required/>
+                    </p>
+    
+                    <p>
+                        <input class="submit" type="submit" value="Iniciar sesión"/>
+                    </p>
+                    
+                </form>
+                
+                <img class="imagen-form" src="img/login/fondo-login.png" alt="oficina login" />
+            </div>
+        </section>
+    </body>
+</html>

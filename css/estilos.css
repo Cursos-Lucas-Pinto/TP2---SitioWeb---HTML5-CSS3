@@ -1,0 +1,885 @@
+*{
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+
+    font-family: calibri, sans-serif;
+}
+
+body{
+    min-height: 100vh;
+
+    background-color: rgb(11, 0, 73);
+}
+
+/*BARRA DE NAVEGACIÓN*/
+
+.grilla-header{
+    display: grid;
+    
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    padding: 30px 60px;
+    justify-content: end;
+
+    width: 100%;
+}
+
+.item{
+    margin: 0 10px;
+    padding: 10px 10px;
+
+    text-decoration: none;
+    color: burlywood;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-color:#fff;
+}
+
+.grilla-menu{
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+    
+    gap: 15px;
+    margin: 0 auto;
+    
+    text-align: center;
+}
+
+.grilla-menu .item:hover{
+    border-radius: 50px;
+
+    background-color: #fff;
+
+    color: rgb(49, 0, 165);
+
+    animation-name: boton-hover;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+}
+
+@keyframes boton-hover {
+    0% {opacity: 50%;}
+    100% {opacity: 100%;}
+}
+
+.grilla-menu .item.activo{
+    border-radius: 50px; 
+
+    background-color: #fff;
+
+    color: rgb(49, 0, 165);
+}
+
+/*BOTÓN DE LOGIN*/
+
+.login{
+    margin: 0 10px;
+    padding: 10px 10px;
+
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-color:#fff;
+
+    text-decoration: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    
+    background-color: yellowgreen;
+}
+
+.grilla-menu .login:hover{
+    border-radius: 50px;
+
+    background-color: rgb(123, 255, 0);
+
+    color: rgb(49, 0, 165);
+
+    animation-name: boton-hover;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+
+@keyframes boton-hover {
+    0% {opacity: 50%;}
+    100% {opacity: 100%;}
+}
+
+.grilla-menu .login.activo{
+    border-radius: 50px;
+    
+    background-color: rgb(123, 255, 0);
+
+    color: rgb(49, 0, 165);
+}
+
+.grilla-section{
+    display: grid;
+}
+
+/*IMAGENES DE FONDO*/
+
+.grilla-fondo{
+    display: grid;
+
+    position: relative;
+    justify-content: left;
+
+    width: 100vw;
+    height: 100vh;
+
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "fondo-sup"
+                          "fondo-inf";
+}
+
+.grilla-fondo .fondo-sup{
+    grid-area: fondo-sup;
+    position: absolute;
+    z-index: 1;
+
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.grilla-fondo .fondo-inf{
+    grid-area: fondo-inf;
+    position: relative;
+    z-index: 2;
+
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    
+    animation-name: mov-vertical;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes mov-vertical {
+    0% {transform: translate(0, 0);}
+    50% {transform: translate(0, -2%);}
+    100% {transform: translate(0, 0);}
+}
+
+/*TÍTULO*/
+
+.grilla-section .titulo-index{
+    position: absolute;
+    z-index: 3;
+    margin: 16% 4%;
+    line-height: 200%;
+
+    font-size: 250%;
+    color: rgb(200, 255, 0);
+    font-family: calibri;
+    text-shadow: -10px 10px 5px black;
+    
+    animation-name: opacidad-titulo;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes opacidad-titulo {
+    0% {opacity: 0%;}
+    100% {opacity: 100%;}
+}
+
+/*TABLA*/
+
+.grilla-section .tabla{
+    position: absolute;
+    z-index: 2;
+    margin: 24% 12%;
+
+    width: 30%;
+    height: 10%;
+
+    font-size: 120%;
+    font-weight: bold;
+
+    animation-name: mov-horiz-tabla;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes mov-horiz-tabla {
+0% {transform: translate(-150%, 0);}
+50% {transform: translate(15%, 0);}
+100% {transform: translate(0, 0);}
+}
+
+.grilla-section .tabla thead{
+    background-color: rgb(218, 134, 0);    
+}
+
+.grilla-section .tabla  thead th{
+    font-family: calibri, sans-serif;
+    
+}
+
+.grilla-section .tabla tbody tr{
+    text-align: center;
+}
+
+.grilla-section .tabla tbody tr td{
+    font-family: calibri, sans-serif;
+}
+
+.grilla-section .tabla tr:nth-child(even) td{
+    background-color: rgb(156, 187, 236);
+}
+
+.grilla-section .tabla tr:nth-child(odd) td{
+    background-color: rgb(68, 92, 196);
+}
+
+.list-coches{
+    background-color: rgb(218, 134, 0) !important;
+}
+
+/*PANTALLA DE LOGIN*/
+
+.fondo-inf.blur,
+.fondo-sup.blur{
+    filter: blur(4px);
+}
+
+.grilla-tarjeta-form{
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "form imagen-form";
+
+    position: absolute;
+    z-index: 2;
+    margin: 10% 25%;
+
+    width: 50%;
+    height: 50%;
+    
+    animation-name: mov-vertical-login;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes mov-vertical-login {
+0% {transform: translate(0, -150%);}
+50% {transform: translate(0, 22%);}
+100% {transform: translate(0, 0);}
+}
+
+/*FORMULARIO DE LOGIN*/
+
+.grilla-form{
+    display: grid;
+
+    grid-template-rows: repeat(6, 1fr);
+
+    grid-area: form;
+    position: relative;
+    padding: 30px 33px 10px;
+
+    width: 100%;
+    height: 60%;
+
+    border-radius: 40px 0 0 40px;
+
+    background-color: #fff;
+}
+
+.imagen-form{
+    grid-area: imagen-form;
+    position: relative;
+    
+    width: 100%;
+    height: 60%;
+    
+    border-radius: 0 40px 40px 0;
+}
+
+.grilla-form .titulo-form{
+    color: black;
+    font-size: 150%;
+    font-weight: bolder;
+}
+
+.grilla-form input[type="text"], input[type="password"]{
+    margin: 0 auto;
+
+    width: 100%;
+
+    font-size: 1em;
+
+    outline: none;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+input[type="submit"]{
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 5% 10%;
+
+    width: 100%;
+
+    font-size: 110%;
+    font-weight: bold;
+}
+
+/*CV RESUMIDO*/
+
+.contenedor-cv{
+    position: absolute;
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 1% 5%;
+    z-index: 3;
+
+    width: 100%;
+
+    animation-name: opacidad-cv;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes opacidad-cv {
+0% {opacity: 0%;}
+100% {opacity: 100%;}
+}
+
+/*CABECERA DEL CV RESUMIDO*/
+
+.grilla-cabecera-cv{
+    display: grid;
+
+    grid-template-columns: 35% 65%;
+    z-index: 2;
+    position: relative;
+    
+    width: 100%;
+
+    border-radius: 4% 4% 0% 0%;
+
+    background: url("/img/cv/fondo-cabecera.png") no-repeat 40% 60%;
+    background-size: cover;    
+}
+
+.img-perfil{
+    width: 70%;
+    height: 80%;
+
+    border-radius: 100%;
+    
+    background: url("/img/cv/avatar.png") no-repeat;
+    background-size: 135%;
+    background-position: center;
+}
+
+.campoTexto-cabecera-cv{
+    padding-top: 1%;
+    padding-bottom: 22%;
+
+    width: 100%;
+}
+
+.campoTexto-cabecera-cv h1{
+    width: 80%;
+    
+    font-size: 70px;
+    color: #fff;
+    font-family: calibri;
+    font-weight: bolder;
+}
+
+.area-laboral-cv{
+    width: 80%;
+
+    color:orange;
+    font-size: 25px;
+}
+
+.descripcion-cv{
+    width: 80%;
+
+    color: #fff;
+    font-size: 25px;
+}
+
+/*CUERPO DEL CV RESUMIDO*/
+
+.grilla-cuerpo-cv{
+    display: grid;
+    grid-template-columns: 53% 47%;
+    
+    z-index: 2;
+    position: relative;
+    
+    width: 100%;
+    
+    border-radius: 4%;
+}
+
+/*COLUMNA UBICADA A LA IZQUIERDA*/
+
+.izquierda-cv{
+    padding-top: 10%;
+
+    width: 100%;
+
+    background-size: cover;
+    background-color: rgb(241, 241, 241);
+}
+
+.contenedor-primario-izq{
+    margin: 0 2% 0 2%;
+
+    width: 90%;
+    
+    border-radius: 15%;
+    
+    background-color: rgb(179, 204, 235);
+}
+
+.contenedor-primario-izq p{
+    padding: 1% 5%;
+
+    font-size: 140%;
+    font-weight: bold;
+    line-height: 110%;
+}
+
+.contenedor-secundario-izq{
+    margin: 0 2% 0 2%;
+
+    width: 90%;
+
+    border-radius: 10%;
+
+    background-color: rgb(223, 222, 222);
+}
+
+.contenedor-secundario-izq p{
+    padding: 1% 5%;
+    
+    font-size: 122%;
+    font-weight: bold;
+}
+
+.grilla-titulo{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    
+    z-index: 2;
+    position: relative;
+
+    width: 100%;
+
+    background-size: cover;
+}
+
+.grilla-titulo div h2{
+    padding: 2% 10%;
+
+    font-size: 180%;
+
+    border-radius: 10%;
+    
+    background-color: orange;
+    
+}
+
+.contenedor-tag{
+    margin: 4% 0;
+    
+    width: 95%;
+
+    text-align: center;
+
+    border-radius: 25%;
+
+    background-color: rgb(206, 206, 206);
+}
+
+.grilla-herramientas-col-2{
+    margin-top: 4%;
+}
+
+.separador{
+    margin-top: 10%;
+}
+
+.grilla-areas{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    
+    z-index: 2;
+    position: relative;
+    
+    width: 100%;
+    
+    text-align: center;
+}
+
+.grilla-areas img{
+    margin-bottom: -5%;
+    margin-top: 15%;
+
+    width: 25%;
+}
+
+.grilla-areas p{
+    font-size: 135%;
+}
+
+.grilla-herramientas{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 44% 16% 40%;
+    gap: 2%;
+    
+    margin-top: 4%;
+}
+
+.grilla-herramientas .alineado-1{
+    margin-top: 15%;
+    padding: 35% 5%;
+    
+    text-align: center;
+}
+
+.grilla-herramientas .alineado-2{
+    margin-top: 15%;
+    padding: 0;
+
+    text-align: center;
+}
+
+.grilla-herramientas .alineado-3{
+    margin-top: 15%;
+    padding: 30% 0%;
+
+    text-align: center;
+}
+
+.grilla-tags-1{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 25% 25% 25% 25%;
+    
+    padding-top: 4%;
+}
+
+.grilla-tags-2{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    
+    padding-top: 6%;
+
+    position: relative;
+}
+
+.grilla-tags-3{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 25% 25% 25% 25%;
+    
+    padding-top: 8%;
+}
+
+/*COLUMNA UBICADA A LA DERECHA*/
+
+.derecha-cv{
+    padding-top: 10%;
+    padding-bottom: 10%;
+    
+    width: 100%;
+
+    background-size: cover;
+    background-color: rgb(163, 190, 224);
+}
+
+.contenedor-primario-der{
+    margin: 0 2% 0 2%;
+
+    width: 90%;
+
+    border-radius: 15%;
+
+    background-color: rgb(104, 121, 143);
+}
+
+.contenedor-primario-der-ext{
+    margin: 0 2% 0 2%;
+
+    width: 90%;
+
+    border-radius: 15%;
+
+    background-color: rgba(225, 226, 228, 0);
+}
+
+.contenedor-primario-der-int{
+    margin: 0 2% 0 2%;
+
+    width: 100%;
+
+    border-radius: 15%;
+
+    background-color: rgb(104, 121, 143);
+}
+
+.contenedor-primario-der-int p{
+    padding: 15% 0;
+    
+    font-size: 130%;
+    color: #fff;
+    line-height: 130%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.grilla-aptitudes{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    gap: 1%;
+}
+
+.contenedor-primario-der p{
+    padding: 4% 4%;
+
+    font-size: 22px;
+    color: #fff;
+    text-align: left;
+}
+
+.contenedor-primario-der a{
+    padding: 4% 4%;
+
+    font-size: 19.5px;
+    color: rgb(216, 213, 213);
+    text-align: left;
+}
+
+.contenedor-primario-der img{
+    width: 100%;
+}
+
+.proyectos{
+    padding-bottom: 10%;
+}
+
+.grilla-proyectos{
+    display: grid;
+    grid-template-columns: 15% 85%;
+    gap: 1%;
+    
+    padding: 2%;
+}
+
+.contenedor-primario-der.proyectos a{
+    font-size: 110%;
+}
+
+.tipo-proyecto p{
+    font-size: 130%;
+}
+
+.grilla-contacto{
+    display: grid;
+    grid-template-columns: 10% 90%;
+    gap: 1%;
+    
+    padding: 2%;
+}
+
+/*PIE DE PAGINA DEL CV RESUMIDO*/
+
+.pie-de-pagina-cv{
+    grid-area: pie-de-pagina-cv;
+}
+
+.pie-de-pagina-cv img{
+    width: 100%;
+
+    border-radius: 0 0 15% 15%;
+}
+
+@media (max-width: 768px) {
+
+    .grilla-section .titulo-index{
+        margin-top: 30%;
+    }
+
+    .grilla-section .tabla{
+        margin-top: 40%;
+        width: 80%;
+    }
+
+    .grilla-tarjeta-form{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 30%;
+    }
+
+    .contenedor-cv{
+        margin-top: 30%;
+    }
+
+    .grilla-cabecera-cv{    
+        grid-template-columns: 45% 65%;
+    }
+
+    .campoTexto-cabecera-cv h1{
+        
+        font-size: 35px;
+    }
+
+    .area-laboral-cv{
+        font-size: 15px;
+    }
+    
+    .descripcion-cv{
+        font-size: 15px;
+    }
+
+    .contenedor-primario-izq p{
+        padding: 4% 10%;
+    
+        font-size: 80%;
+    }
+
+    .grilla-titulo{
+        grid-template-columns: 99% 1%;
+    }
+
+    .grilla-titulo div h2{
+        padding: 2% 10%;
+    
+        font-size: 115%;
+    }
+
+    .contenedor-secundario-izq p{
+        padding: 4% 10%;
+
+        font-size: 80%;
+    }
+
+    .grilla-areas img{
+        width: 50%;
+    }
+
+    .grilla-areas p{
+        font-size: 70%;
+    }
+
+    .grilla-herramientas .alineado-1{
+        margin-top: 15%;
+        padding: 42% 5%;
+        
+        font-size: 50%;
+        text-align: center;
+    }
+    
+    .grilla-herramientas .alineado-2{
+        margin-top: 15%;
+        padding: 0;
+    
+        font-size: 50%;
+        text-align: center;
+    }
+    
+    .grilla-herramientas .alineado-3{
+        margin-top: 15%;
+        padding: 30% 0%;
+    
+        font-size: 50%;
+        text-align: center;
+    }
+
+    .grilla-tags-1{
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        grid-template-rows: 25% 25% 25% 25%;
+        
+        padding-top: 4%;
+
+        font-size: 50%;
+    }
+    
+    .grilla-tags-2{
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        
+        padding-top: 6%;
+
+        font-size: 50%;
+    }
+    
+    .grilla-tags-3{
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        grid-template-rows: 25% 25% 25% 25%;
+        
+        padding-top: 8%;
+
+        font-size: 50%;
+    }
+
+    .contenedor-primario-der-int p{
+        padding: 15% 0;
+        
+        font-size: 45%;
+    }
+
+    .contenedor-primario-der p{
+        padding: 6% 6%;
+    
+        font-size: 80%;
+    }
+
+    .grilla-proyectos{
+        grid-template-columns: 25% 75%;
+    }
+
+    .contenedor-primario-der.proyectos{
+        padding-left: 10%;
+    }
+
+    .contenedor-primario-der.proyectos a{
+        padding: 0%;
+        font-size: 50%;
+    }
+
+    .tipo-proyecto p{
+        font-size: 70%;
+    }
+
+    .grilla-contacto{
+        display: grid;
+        grid-template-columns: 15% 85%;
+        gap: 1%;
+        
+        padding: 2%;
+    }
+
+    .grilla-contacto p{
+        font-size: 50%;
+    }
+
+    .grilla-contacto a{
+        font-size: 70%;
+    }
+}
